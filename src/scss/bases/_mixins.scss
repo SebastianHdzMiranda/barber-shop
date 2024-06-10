@@ -12,6 +12,11 @@
         @content;
     }
 }
+@mixin tabletH {
+    @media (max-height: v.$tabletH) {
+        @content;
+    }
+}
   
 @mixin desktop {
     @media (min-width: v.$desktop) {

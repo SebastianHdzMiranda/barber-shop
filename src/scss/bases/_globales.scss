@@ -11,6 +11,8 @@ html {
 }
 *, *:before, *:after {
     box-sizing: inherit;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
   
 body {
@@ -25,11 +27,14 @@ body {
     color: v.$blanco;
     
     position: relative;
-    
     @include m.tablet {
         overflow: hidden;
-
     }
+
+    @include m.tabletH {
+        overflow-y:  scroll;
+    }
+
 }
 [class$="contenedor"],
 .contenedor {
