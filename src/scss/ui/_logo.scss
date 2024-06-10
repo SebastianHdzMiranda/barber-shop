@@ -1,0 +1,11 @@
+@use '../bases/variables' as v; 
+@use '../bases/mixins' as m;
+
+.logoContainer {
+
+    .logo {
+        margin: 4rem auto 0 auto;
+        // margin-top: 5rem;
+        width: 35rem;
+    }
+}
