@@ -60,6 +60,7 @@ function Formulario() {
 
                 {!mostrarUsuario &&
                     <div className="formulario__servicios">
+                        <h2 className='formulario__heading'>Selecciona un Servicio</h2>
                         <div className="formulario__grid">
                             {servicios.map( (servicio, i) => 
                                 <div className="formulario__servicio" key={i} /*onClick={guardarServicio}*/>
@@ -75,18 +76,18 @@ function Formulario() {
                 }
                 {(mostrarUsuario && !mostrarPrecio) && 
                     <div className='formulario__nombre'>
-                        <label htmlFor="nombre">Digita tu nombre</label>
+                        <label className='formulario__heading' htmlFor="nombre">Digita tu nombre</label>
                         <select name="nombre" id="nombre" className='formulario__select' onChange={guardarNombre}>
                             <option value="" disabled selected>Elige tu nombre</option>
-                            <option value="sebastian">Sebastian</option>
-                            <option value="rodrigo">Rodrigo</option>
+                            <option value="barbaro1">Barbaro1</option>
+                            <option value="barbero2">Barbero2</option>
                         </select>
                     </div>
                 }
 
                 {mostrarPrecio && 
                     <div className='formulario__precio'>
-                        <label htmlFor="precio">Digita el precio</label>
+                        <label className='formulario__heading' htmlFor="precio">Digita el precio</label>
                         <input type="number" className='formulario__select'/>
                     </div>
                 }

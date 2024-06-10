@@ -3,11 +3,15 @@
 
 
 .contenedor-formulario {
-    max-width: 80rem;
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
+    padding-block: 5rem;
+    @include m.tablet {
+        padding-block: 0;
+        max-width: 80rem;
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .formulario {
@@ -19,9 +23,19 @@
         cursor: pointer;
     }
 
+    .formulario__heading {
+        font-size: 2rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
     .formulario__grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+
+        @include m.tablet {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
     .formulario__servicio {
         border: 1px solid v.$blanco;
@@ -50,6 +64,7 @@
     }
     .formulario__radio-text {
         margin: 0;
+        text-align: center;
     }
 
     // 2da Ventana
@@ -65,7 +80,7 @@
 
 
     .formulario__botones {
-        margin-top: 1rem;
+        margin-top: 1.4rem;
         // display: flex;
         // justify-content: space-between;
         display: grid;
@@ -75,7 +90,7 @@
 
 
     .formulario__btn {
-        padding: .5rem 3rem;
+        padding: .8rem 3rem;
         border: none;
         border-radius: 5px;
         cursor: pointer;

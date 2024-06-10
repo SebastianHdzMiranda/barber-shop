@@ -16,16 +16,20 @@ html {
 body {
     font-family: v.$fuentePrincipal;
     font-size: 1.6rem;
-    overflow: hidden;
     // position: relative;
-
+    
     background-image: linear-gradient(to top, rgb(0 0 0 / .75) 0%, rgb(0 0 0 / .75)), url(../assets/barberiabg3.jpg);
     // background-image: linear-gradient(to top, rgb(0 0 0 / .6) 0%, rgb(0 0 0 / .6)), url(../assets/sebas.jpg);
     background-size: cover;
     height: 100vh;
     color: v.$blanco;
-
+    
     position: relative;
+    
+    @include m.tablet {
+        overflow: hidden;
+
+    }
 }
 [class$="contenedor"],
 .contenedor {
