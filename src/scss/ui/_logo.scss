@@ -6,6 +6,10 @@
     .logo {
         margin: 4rem auto 0 auto;
         // margin-top: 5rem;
-        width: 35rem;
+        width: 30rem;
+
+        @include m.tablet {
+            width: 35rem;
+        }
     }
 }

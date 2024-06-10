@@ -7,7 +7,9 @@ function App() {
   return (
     <>  
       <div className="logoContainer contenedor">
-        <img className='logo' src={logo} alt="Logo" />
+        <a href="/">
+          <img className='logo' src={logo} alt="Logo" />
+        </a>
       </div>
 
       <Formulario/>
