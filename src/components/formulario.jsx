@@ -88,7 +88,7 @@ function Formulario() {
                 {mostrarPrecio && 
                     <div className='formulario__precio'>
                         <label className='formulario__heading' htmlFor="precio">Digita el precio</label>
-                        <input type="number" className='formulario__select'/>
+                        <input type="number" className='formulario__select' placeholder='Digita el precio Ej. $120'/>
                     </div>
                 }
 
