@@ -27,13 +27,13 @@ body {
     color: v.$blanco;
     
     position: relative;
-    @include m.tablet {
-        overflow: hidden;
-    }
+    // @include m.tablet {
+    //     overflow: hidden;
+    // }
 
-    @include m.tabletH {
-        overflow-y:  scroll;
-    }
+    // @include m.tabletH {
+    //     overflow-y:  scroll;
+    // }
 
 }
 [class$="contenedor"],

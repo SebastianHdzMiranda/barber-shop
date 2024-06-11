@@ -8,28 +8,32 @@ import nihoCD from '../assets/nihoCD.png';
 import cejas from '../assets/cejas.png';
 
 import AdultoConBarba from '../assets/adultoConBarba.png';
+import ritualBarba from '../assets/barbaRitual.png';
+import corteBarbaDisenho from '../assets/corte-barba-diseño.png';
+import servicioVip from '../assets/servicioVip.png';
 import Example from './Example';
 
 const servicios = [
-    {img: adulto, nombre:'Corte Adulto'},
-    {img: niho, nombre:'Corte Niño'},
-    {img: barba, nombre:'Barba'},
-    {img: bigote, nombre:'Bigote'},
-    {img: adultoCD, nombre:'Corte Adulto C/D'},
-    {img: nihoCD, nombre:'Corte Niño C/D'},
-    {img: cejas, nombre:'Arreglo de Cejas'},
-    {img: AdultoConBarba, nombre:'Adulto con barba'},
+    {img: adulto, servicio:'Corte Adulto', price: 100},
+    {img: niho, servicio:'Corte Niño', price: 80},
+    {img: barba, servicio:'Barba', price: 70},
+    {img: bigote, servicio:'Bigote', price: 50},
+    {img: adultoCD, servicio:'Corte Adulto C/D', price: 140},
+    {img: nihoCD, servicio:'Corte Niño C/D', price: 120},
+    {img: cejas, servicio:'Arreglo de Cejas', price: 50},
+    {img: AdultoConBarba, servicio:'Adulto con barba', price: 150},
+    {img: corteBarbaDisenho, servicio:'Corte Barba C/D', price: 140},
+    {img: ritualBarba, servicio:'Ritual Barba', price: 120},
+    {img: servicioVip, servicio:'Servicio Vip', price: 300},
 ];
 
 function Formulario() {
     const [servicio, setServicio] = useState('');
-    const [mostrarUsuario, setMostrarUsuario] = useState(false);
-
+    const [changeDisplay, setChangeDisplay] = useState(false);
     const [nombre, setNombre] = useState('');
-    const [mostrarPrecio, setMostrarPrecio] = useState(false);
 
     const guardarServicio = (nombre)=> {
-        console.log(`Selecciono el servicio: ${nombre}`);
+        // console.log(`Selecciono el servicio: ${nombre}`);
         setServicio(nombre);
     }
 
@@ -39,13 +43,11 @@ function Formulario() {
             console.log('Tienes que elegir un servicio');
             return;
         } else {
-            setMostrarUsuario(true);
+            setChangeDisplay(true);
         }
 
         if (servicio !== '' && nombre === '') {
             console.log('Tienes que elegir un nombre');
-        } else {
-            setMostrarPrecio(true);
         }
     }
 
@@ -53,28 +55,40 @@ function Formulario() {
         console.log(e.target.value);
         setNombre(e.target.value);
     }
+
+    const handleSubmit = (e) => {
+        // e.preventDefault();
+        // const servicioObj = servicios.filter( service => service.servicio === servicio)[0];
+        // const data = {...servicioObj, nombre};
+
+        // Enviar data
+        // console.log(data);
+
+        
+    }
     
     return(
         <div className="contenedor-formulario contenedor">
-            <form className="formulario">
+            <form className="formulario" onSubmit={handleSubmit}>
 
-                {!mostrarUsuario &&
+                {!changeDisplay &&
                     <div className="formulario__servicios">
                         <h2 className='formulario__heading'>Selecciona un Servicio</h2>
                         <div className="formulario__grid">
                             {servicios.map( (servicio, i) => 
                                 <div className="formulario__servicio" key={i} /*onClick={guardarServicio}*/>
-                                    <input className="formulario__radio" type="radio" name="servicios" value={servicio.nombre} id={`servicio${i+1}`} onChange={()=> guardarServicio(servicio.nombre)}/>
+                                    <input className="formulario__radio" type="radio" name="servicios" value={servicio.servicio} id={`servicio${i+1}`} onChange={()=> guardarServicio(servicio.servicio)}/>
                                     <label className='formulario__radio-label' htmlFor={`servicio${i+1}`}>
                                         <img className='formulario__radio-img' src={servicio.img} alt={`servicio${i+1}`} />
-                                        <p className='formulario__radio-text'>{servicio.nombre}</p>
+                                        <p className='formulario__radio-text'>{servicio.servicio}</p>
+                                        <p className='formulario__radio-price'>${servicio.price}</p>
                                     </label>
                                 </div>
                             )}
                         </div>
                     </div>
                 }
-                {(mostrarUsuario && !mostrarPrecio) && 
+                {(changeDisplay) && 
                     <div className='formulario__nombre'>
                         <label className='formulario__heading' htmlFor="nombre">Digita tu nombre</label>
                         <select name="nombre" id="nombre" className='formulario__select' onChange={guardarNombre}>
@@ -85,23 +99,15 @@ function Formulario() {
                     </div>
                 }
 
-                {mostrarPrecio && 
-                    <div className='formulario__precio'>
-                        <label className='formulario__heading' htmlFor="precio">Digita el precio</label>
-                        <input type="number" className='formulario__select' placeholder='Digita el precio Ej. $120'/>
-                    </div>
-                }
-
                 <div className="formulario__botones">
                     
-                    {mostrarUsuario &&
-                        <button className='formulario__btn'>Atras</button>
-                    }
-
-                    {!mostrarPrecio ?
+                    {!changeDisplay ?
                         <button className='formulario__btn formulario__btn--next' onClick={sigPag}>Siguiente</button>
                         :
-                        <input type="submit" className='formulario__btn formulario__btn--submit'/>
+                        <>
+                            <button className='formulario__btn'>Atras</button>
+                            <input type="submit" className='formulario__btn formulario__btn--submit'/>
+                        </>
                     }
                 </div>
 
