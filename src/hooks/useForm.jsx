@@ -82,7 +82,7 @@ export default function useForm() {
                 <div class='modal'>
                     <p>Se registrara la siguiente informacion:</p>
                     <img src='/${data.img}.png'/> 
-                    <p>${venta} - ${nombre}</p>
+                    <p>${venta} ${pago ? `- ${pago}` : ''} - ${nombre}</p>
                 </div>
             `,
             icon: "question",
