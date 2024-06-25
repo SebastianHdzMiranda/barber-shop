@@ -1,7 +1,6 @@
 import './scss/app.scss'
 import logo from '../src/assets/logo.png'
-import Formulario from './components/Formulario';
-import Form from './components/Form';
+import Form from './components/Form.jsx';
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
           <img className='logo' src={logo} alt="Logo" />
         </a>
       </div>
-      {/* <Formulario /> */}
       <Form />
     </>
   )
