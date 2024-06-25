@@ -14,6 +14,7 @@ export const servicios = [
     {id:uuidv4(), img: 'servicioVip', sale:'Servicio Vip', price: 300},
     {id:uuidv4(), img: 'c-1', sale:'C-1', price: 50},
     {id:uuidv4(), img: 'c-1', sale:'C-2', price: 40},
+    {id:uuidv4(), img: 'c-1', sale:'C-G', price: 0},
 
 ];
 
@@ -29,4 +30,10 @@ export const users = [
     { name: 'Yael'},
     { name: 'Jesus'},
     { name: 'Liam'},
+]
+
+export const pagos = [
+    { name: 'Targeta'},
+    { name: 'Transferecia'},
+    { name: 'Efectivo'},
 ]

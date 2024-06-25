@@ -11,6 +11,7 @@ export default function useForm() {
     const [venta, setVenta] = useState('');
     const [changeDisplay, setChangeDisplay] = useState(false);
     const [nombre, setNombre] = useState('');
+    const [pago, setPago] = useState('');
 
     const [alert, setAlert] = useState('');
 
@@ -37,11 +38,20 @@ export default function useForm() {
         setNombre(e.target.value);
     }
 
+    const guardarPago = (e) => {
+        setPago(e.target.value);
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (nombre === '') {
             crearAlerta('*El campo nombre es obligatorio');
+            return;
+        }
+
+        if( pago === '' && venta !== 'C-G') {
+            crearAlerta('*El campo pago es obligatorio');
             return;
         }
 
@@ -60,12 +70,21 @@ export default function useForm() {
             ...data, 
             fecha: formatDate(Date.now()), 
             hora: formatTime(Date.now()), 
-            nombre
+            nombre,
+            pago,
         }
+        console.log(data);
 
         const resultado = await Swal.fire({
             title: "¿Está seguro?",
-            text: "¡Se enviaran los datos registrados!",
+            // text: `¡Se registrara: ${venta} - ${nombre}!`,
+            html: `
+                <div class='modal'>
+                    <p>Se registrara la siguiente informacion:</p>
+                    <img src='/${data.img}.png'/> 
+                    <p>${venta} - ${nombre}</p>
+                </div>
+            `,
             icon: "question",
             showCancelButton: true,
             confirmButtonColor: "#55e6a5",
@@ -99,9 +118,11 @@ export default function useForm() {
         changeDisplay,
         alert,
         handleCells,
+        venta,
         guardarVenta,
         sigPag,
         guardarNombre,
+        guardarPago,
         handleSubmit,
         handleChangeDisplay,
     }

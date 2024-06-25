@@ -1,4 +1,4 @@
-import { productos, servicios, users } from '../data/db';
+import { pagos, productos, servicios, users } from '../data/db';
 import useForm from '../hooks/useForm';
 
 function Form() {
@@ -8,9 +8,11 @@ function Form() {
         changeDisplay,
         alert,
         handleCells,
+        venta,
         guardarVenta,
         sigPag,
         guardarNombre,
+        guardarPago,
         handleSubmit,
         handleChangeDisplay,
     } = useForm();
@@ -56,7 +58,6 @@ function Form() {
                                 )}
                             </div> 
                         }
-
                     </div>
                 }
 
@@ -70,6 +71,20 @@ function Form() {
                                 <option value={user.name} key={i}>{user.name}</option>
                             )}
                         </select>
+
+                        {venta !== 'C-G' &&
+                            <>
+                                <label className='formulario__heading' htmlFor="pago">Forma de pago</label>
+                                <select name="pago" id="pago" className='formulario__select' onChange={guardarPago}>
+                                    <option value=''>-- Elige la forma de pago --</option>
+                                    { pagos.map( (pago, i) => 
+                                        <option value={pago.name} key={i}>{pago.name}</option>
+                                    )}
+                                </select>
+                            </>
+                        }
+
+
                     </div>
                 }
                 {alert && <p className='formulario__alerta'>{alert}</p>}

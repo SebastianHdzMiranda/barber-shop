@@ -3,7 +3,7 @@ const store = new SteinStore(
 );
 
 export async function addSale(data) {
-    const { id, img, sale, price, nombre, fecha, hora } = data;
+    const { id, img, sale, price, nombre, fecha, hora, pago } = data;
 
     const respuesta = await     store
     .append("hoja1", [
@@ -14,6 +14,7 @@ export async function addSale(data) {
             'Fecha': fecha,
             'Hora': hora,
             'Imagen': img,
+            'Pago': pago,
             'Id': id
         }
     ]);
