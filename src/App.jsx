@@ -1,7 +1,6 @@
 import './scss/app.scss'
 import logo from '../src/assets/logo.png'
-import Formulario from './components/formulario'
-import { useState } from 'react'
+import Formulario from './components/Formulario';
 
 function App() {
   return (
@@ -11,8 +10,7 @@ function App() {
           <img className='logo' src={logo} alt="Logo" />
         </a>
       </div>
-
-      <Formulario/>
+      <Formulario />
     </>
   )
 }
