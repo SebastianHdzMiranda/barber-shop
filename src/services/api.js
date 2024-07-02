@@ -1,27 +1,33 @@
 const store = new SteinStore(
     "https://api.steinhq.com/v1/storages/667a35d14d11fd04f00c2cb3"
-    // https://api.steinhq.com/v1/storages/666889cf4d11fd04f0028679
+    // 'https://api.steinhq.com/v1/storages/666889cf4d11fd04f0028679'
 );
 
 export async function addSale(data) {
     const { id, img, sale, price, nombre, fecha, hora, pago } = data;
 
-    const respuesta = await     store
-    .append("hoja1", [
-        {
-            'Nombre': nombre,
-            'Venta': sale,
-            'Precio': price,
-            'Fecha': fecha,
-            'Hora': hora,
-            'Imagen': img,
-            'Pago': pago,
-            'Id': id
-        }
-    ]);
+    try {
+        const respuesta = await     store
+        .append("hoja1", [
+            {
+                'Nombre': nombre,
+                'Venta': sale,
+                'Precio': price,
+                'Fecha': fecha,
+                'Hora': hora,
+                'Imagen': img,
+                'Pago': pago,
+                'Id': id
+            }
+        ]);
+        return respuesta;
+        
+    } catch (error) {
+        return error;   
+    }
 
 
-   return respuesta;
+
 }
 
 // export function deleteSales() {

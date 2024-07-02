@@ -90,15 +90,38 @@ export default function useForm() {
             confirmButtonColor: "#55e6a5",
             cancelButtonColor: "#dc2626",
             confirmButtonText: "¡Si, enviar!",
-            cancelButtonText: "¡No, cancelar!"
-          });
-          if (resultado.isConfirmed) {
-            // Enviar datos a la api
-            await addSale(data); 
-            
-            location.reload();
-        }
+            cancelButtonText: "¡No, cancelar!",
+            preConfirm: async() => {
 
+                try {
+                    const result = await addSale(data); 
+                    if (Object.keys(result)[0] === 'error') {
+                        throw new Error('No se enviaron los datos');
+                    } else {
+                        return result;
+                    }
+                    
+                } catch (error) {
+                    Swal.showValidationMessage(`
+                        Request failed: ${error}
+                    `);
+                }
+            }          
+
+        });
+        if (resultado.isConfirmed) {            
+            const alertSuccess = Swal.fire({
+                title: "Enviado!",
+                text: "Se enviaron los datos correctamente.",
+                icon: "success",
+                confirmButtonText: 'Ok'
+            });
+
+            if ((await alertSuccess).isConfirmed || (await alertSuccess).dismiss) {
+                location.reload();
+            }
+
+        }
 
     }
 
