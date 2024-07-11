@@ -1,5 +1,7 @@
 const store = new SteinStore(
     "https://api.steinhq.com/v1/storages/667a35d14d11fd04f00c2cb3"
+
+    // Sebastian Api
     // 'https://api.steinhq.com/v1/storages/666889cf4d11fd04f0028679'
 );
 
@@ -29,6 +31,34 @@ export async function addSale(data) {
 
 
 }
+
+export async function addHorario(data) {
+    const { nombre, access, fecha, hora } = data;
+
+    try {
+        const respuesta = await store
+        .append(access.toLowerCase(), [
+            {
+                'Nombre': nombre,
+                'Fecha' : fecha,
+                [access] : hora,
+            }
+        ]);
+        return respuesta;
+        
+    } catch (error) {
+        return error;   
+    }
+}
+
+export async function readSale() {   
+    
+    const respuesta =  await store.read("hoja1", { limit: 1000 })
+    return respuesta;
+    
+}
+
+
 
 // export function deleteSales() {
       

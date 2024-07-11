@@ -2,12 +2,15 @@
 @use '../bases/mixins' as m;
 
 
-.contenedor-formulario {
-    padding-bottom: 5rem;
-    max-width: 90rem;
-}
-
 .formulario {
+    &__legend {
+        display: block;
+        text-align: center;
+        // font-weight: 700;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
     &__buttons {
         display: flex;
         gap: 1rem;
@@ -77,11 +80,6 @@
         font-size: 1.6rem;
     }
 
-    &__alerta {
-        font-size: 1.6rem;
-        color: #FF0000;
-    }
-
     &__botones {
         margin-top: 1.4rem;
         display: grid;
@@ -105,6 +103,7 @@
         }
     }
 }
+
 
 .modal {
     text-align: center;

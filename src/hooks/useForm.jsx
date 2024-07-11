@@ -15,6 +15,7 @@ export default function useForm() {
 
     const [alert, setAlert] = useState('');
 
+
     const handleCells = (boolean) => {
         setCells(boolean);
         setVenta('')
@@ -73,7 +74,6 @@ export default function useForm() {
             nombre,
             pago,
         }
-        console.log(data);
 
         const resultado = await Swal.fire({
             title: "¿Está seguro?",
@@ -122,7 +122,6 @@ export default function useForm() {
             }
 
         }
-
     }
 
     const crearAlerta = (mensaje) => {
@@ -137,6 +136,8 @@ export default function useForm() {
     }
 
     return {
+        nombre,
+        pago,
         cells,
         changeDisplay,
         alert,

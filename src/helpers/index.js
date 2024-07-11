@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 // Funcion que formatea fechas
 export function formatDate(dateStr) {
     const date = new Date(dateStr);

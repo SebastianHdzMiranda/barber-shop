@@ -1,9 +1,12 @@
 import { pagos, productos, servicios, users } from '../data/db';
 import useForm from '../hooks/useForm';
+import Alert from './Alert';
 
 function Form() {
 
     const {
+        nombre,
+        pago,
         cells,
         changeDisplay,
         alert,
@@ -18,7 +21,7 @@ function Form() {
     } = useForm();
 
     return(
-        <div className="contenedor-formulario contenedor">
+        <div>
             <form className="formulario" onSubmit={handleSubmit}>
 
                 {!changeDisplay &&
@@ -65,8 +68,8 @@ function Form() {
                 {(changeDisplay) && 
                     <div className='formulario__nombre'>
                         <label className='formulario__heading' htmlFor="nombre">Digita tu nombre</label>
-                        <select name="nombre" id="nombre" className='formulario__select' onChange={guardarNombre}>
-                            <option value=''>-- Elige tu nombre --</option>
+                        <select name="nombre" id="nombre" className='formulario__select' value={nombre} onChange={guardarNombre}>
+                            <option value='' disabled hidden>-- Elige tu nombre --</option>
                             { users.map( (user, i) => 
                                 <option value={user.name} key={i}>{user.name}</option>
                             )}
@@ -75,8 +78,8 @@ function Form() {
                         {venta !== 'C-G' &&
                             <>
                                 <label className='formulario__heading' htmlFor="pago">Forma de pago</label>
-                                <select name="pago" id="pago" className='formulario__select' onChange={guardarPago}>
-                                    <option value=''>-- Elige la forma de pago --</option>
+                                <select name="pago" id="pago" className='formulario__select' value={pago} onChange={guardarPago}>
+                                    <option value='' disabled hidden>-- Elige la forma de pago --</option>
                                     { pagos.map( (pago, i) => 
                                         <option value={pago.name} key={i}>{pago.name}</option>
                                     )}
@@ -87,7 +90,7 @@ function Form() {
 
                     </div>
                 }
-                {alert && <p className='formulario__alerta'>{alert}</p>}
+                {alert && <Alert>{alert}</Alert>}
 
 
                 <div className="formulario__botones">
@@ -102,9 +105,11 @@ function Form() {
                     }
                 </div>
 
-
+                
 
             </form>
+
+            
                 
         </div>
     )
