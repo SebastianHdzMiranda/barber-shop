@@ -3,6 +3,15 @@
 
 
 .formulario {
+
+    max-width: 91%;
+    margin: 0 auto;
+
+    @include m.tablet {
+        max-width: unset;
+        margin: unset;
+    }
+
     &__legend {
         display: block;
         text-align: center;
@@ -33,7 +42,7 @@
             grid-template-columns: repeat(4, 1fr);
         }
         @include m.desktop {
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(5, 1fr);
         }
     }
     &__cell {

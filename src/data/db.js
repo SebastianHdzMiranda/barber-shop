@@ -8,13 +8,19 @@ export const servicios = [
     {id:uuidv4(), img: 'adultoCD', sale:'Corte Adulto C/D', price: 140},
     {id:uuidv4(), img: 'nihoCD', sale:'Corte Niño C/D', price: 120},
     {id:uuidv4(), img: 'cejas', sale:'Arreglo de Cejas', price: 50},
-    {id:uuidv4(), img: 'adultoConBarba', sale:'Adulto con barba', price: 150},
-    {id:uuidv4(), img: 'corteBarbaDisenho', sale:'Corte Barba C/D', price: 190},
+    {id:uuidv4(), img: 'adultoConBarba', sale:'Adulto con afeitado', price: 150},
+    {id:uuidv4(), img: 'corteBarbaDisenho', sale:'Corte Barba C/D', price: 200},
     // {id:uuidv4(), img: 'ritualBarba', sale:'Ritual Barba', price: 120},
     {id:uuidv4(), img: 'servicioVip', sale:'Servicio Vip', price: 300},
     {id:uuidv4(), img: 'c-1', sale:'C-1', price: 50},
     {id:uuidv4(), img: 'c-1', sale:'C-2', price: 40},
     {id:uuidv4(), img: 'c-1', sale:'C-G', price: 0},
+    {id:uuidv4(), img: 'corteBarbaToalla', sale:'Corte Barba y Toalla', price: 170},
+    {id:uuidv4(), img: 'corteCDPigmentado', sale:'Corte C/D Pigmentado', price: 160},
+    {id:uuidv4(), img: 'corteBarbaToallaPigmentado', sale:'Corte / Barba / Toalla / Pig', price: 200},
+    {id:uuidv4(), img: 'complemento', sale:'Complemento 1', price: 20},
+    {id:uuidv4(), img: 'complemento', sale:'Complemento 2', price: 30},
+    {id:uuidv4(), img: 'complemento', sale:'Complemento 3', price: 60},
 
 ];
 
@@ -27,9 +33,10 @@ export const productos = [
 ]
 
 export const users = [
-    { name: 'Yael'},
-    { name: 'Jesus'},
-    { name: 'Liam'},
+    { name: 'BarberoA'},
+    { name: 'BarberoB'},
+    { name: 'BarberoC'},
+    { name: 'BarberoD'},
 ]
 
 export const pagos = [
