@@ -18,6 +18,8 @@ export const servicios = [
     {id:uuidv4(), img: 'corteBarbaToalla', sale:'Corte Barba y Toalla', price: 170},
     {id:uuidv4(), img: 'corteCDPigmentado', sale:'Corte C/D Pigmentado', price: 160},
     {id:uuidv4(), img: 'corteBarbaToallaPigmentado', sale:'Corte / Barba / Toalla / Pig', price: 200},
+    {id:uuidv4(), img: 'discap', sale:'Corte Discap', price: 80},
+    {id:uuidv4(), img: 'discap', sale:'Corte Discap Niño', price: 60},
     {id:uuidv4(), img: 'complemento', sale:'Complemento 1', price: 20},
     {id:uuidv4(), img: 'complemento', sale:'Complemento 2', price: 30},
     {id:uuidv4(), img: 'complemento', sale:'Complemento 3', price: 60},
