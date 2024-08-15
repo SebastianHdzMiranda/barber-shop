@@ -8,7 +8,7 @@ export const servicios = [
     {id:uuidv4(), img: 'adultoCD', sale:'Corte Adulto C/D', price: 140},
     {id:uuidv4(), img: 'nihoCD', sale:'Corte Niño C/D', price: 120},
     {id:uuidv4(), img: 'cejas', sale:'Arreglo de Cejas', price: 50},
-    {id:uuidv4(), img: 'adultoConBarba', sale:'Adulto con afeitado', price: 150},
+    {id:uuidv4(), img: 'adultoConBarba', sale:'Adulto Con Afeitado', price: 150},
     {id:uuidv4(), img: 'corteBarbaDisenho', sale:'Corte Barba C/D', price: 200},
     // {id:uuidv4(), img: 'ritualBarba', sale:'Ritual Barba', price: 120},
     {id:uuidv4(), img: 'servicioVip', sale:'Servicio Vip', price: 300},
