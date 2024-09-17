@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Form />}/>
           <Route path='/registerDay' element={<RegisterDay />}/>
-          <Route path='/dailyTotal' element={<DailyTotal />}/>
+          {/* <Route path='/dailyTotal' element={<DailyTotal />}/> */}
         </Routes>
       </Router> 
 

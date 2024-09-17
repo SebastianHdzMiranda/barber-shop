@@ -36,9 +36,9 @@ function Header() {
                         <li className="navegacion__item">
                             <Link to={`/registerDay`} className="navegacion__enlace" onClick={e => setViewMenu(!viewMenu)}>Registrar Asistencia</Link>
                         </li>
-                        <li className="navegacion__item">
+                        {/* <li className="navegacion__item">
                             <Link to={`/dailyTotal`} className="navegacion__enlace" onClick={e => setViewMenu(!viewMenu)}>Ventas Totales</Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
             </div>
