@@ -27,11 +27,11 @@ export const servicios = [
 ];
 
 export const productos = [
-    {id:uuidv4(), img: 'nishman', sale: 'Nishman', price: 200},
+    {id:uuidv4(), img: 'nishman', sale: 'Nishman', price: 210},
     {id:uuidv4(), img: 'FixMe', sale: 'FixMe', price: 120},
-    {id:uuidv4(), img: 'baregk', sale: 'Baregk', price: 90},
-    {id:uuidv4(), img: 'barbiux', sale: 'Barbiux', price: 180},
-    {id:uuidv4(), img: 'nishmanP0', sale: 'Nishman p0', price: 230},
+    {id:uuidv4(), img: 'baregk', sale: 'Baregk', price: 100},
+    {id:uuidv4(), img: 'barbiux', sale: 'Barbiux', price: 190},
+    {id:uuidv4(), img: 'nishmanP0', sale: 'Nishman p0', price: 240},
 ]
 
 export const users = [

@@ -7,6 +7,12 @@ function DailyTotal() {
 
     const [data, setData] = useState([]);
 
+    // const usersOnly = [
+    //     { name: 'BarberoA'},
+    //     { name: 'BarberoB'},
+    //     { name: 'BarberoC'},
+    //     { name: 'BarberoD'},
+    // ]
     useEffect(() => {
         consultarApi();
         async function consultarApi() {
@@ -15,6 +21,12 @@ function DailyTotal() {
             // Almacenar datos del dia
             const dataNow = data.filter( registro => registro.Fecha === formatDate(Date.now()));
             setData(dataNow);
+
+            // console.log(dataNow);
+
+            // setData(dataNow.filter( barbero => 
+            //     ["BarberoA", "BarberoB", "BarberoC", "BarberoD"].includes(barbero.Nombre)
+            // ))
         }
     }, []);
 
